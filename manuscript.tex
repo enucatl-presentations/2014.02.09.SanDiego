@@ -1,0 +1,318 @@
+%        File: additional_info.tex
+%     Created: Fri Jul 19 04:00 PM 2013 C
+% Last Change: Fri Jul 19 04:00 PM 2013 C
+%
+\documentclass[a4paper]{spie}
+\usepackage[]{amsmath}
+\usepackage[detect-all]{siunitx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage[affil-it]{authblk}
+\usepackage[]{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+
+\graphicspath{{figures/}}
+\newcommand{\de}[1]{\ensuremath{\operatorname{d}\!{#1}}}
+
+%fix path issue with png files
+\let\pgfimageWithoutPath\pgfimage 
+\renewcommand{\pgfimage}[2][]{\pgfimageWithoutPath[#1]{figures/#2}}
+
+\begin{document}
+\title{Performance of X-ray grating interferometry at high energies}
+\author{Matteo Abis, Thomas Th\"uring and Marco Stampanoni}
+\affil{ETH Z\"urich and Paul Scherrer Institut}
+\renewcommand{\today}{}
+\maketitle
+\begin{abstract}
+A theoretical description of the performance of a Talbot and Talbot-Lau
+type interferometers is developed, providing a framework for the
+optimization of the geometry for monochromatic and polychromatic
+beams. Analytical formulas for the smallest
+detectable refraction angle and the visibility of the setup are derived.
+The polychromatic visibility of the interference fringes is particularly
+relevant for the design of setups with conventional X-ray tubes, and it
+is described in terms of the spectrum of the source and the type of
+beam-splitter grating.
+We show the practical realization of such a design by imaging a metallic
+screw at~\SI{100}{\kilo\eV}.
+\end{abstract}
+
+\section{Grating interferometry}
+Grating interferometry (figure~\ref{interferometer}) is an imaging technique yielding complementary
+signals from the interaction of X-rays with matter. Besides the absorption
+image, a phase shift~\cite{David2002,Momose2003a} and a
+scattering~\cite{Pfeiffer2006} signal
+can be simultaneously retrieved from the interference pattern.
+
+This approach does not rely on a highly coherent source, thus it can be applied
+to ordinary X-ray sources and not only to synchrotron facilities.
+The fundamental principle of this interferometric device is the Talbot
+self-imaging effect, where an image of a phase grating G1 is formed
+at certain distances downstream of the grating itself.
+
+The phase sensitivity is given by the lateral displacement of the fringes in this
+interference pattern, corresponding to phase variations introduced by a
+sample in the direction $x$, perpendicular to the grating lines. The
+refraction angle $\alpha$ is then:
+\begin{equation*}
+    \alpha = -\frac{1}{k} \frac{\partial\varphi}{\partial
+    x}.
+\end{equation*}
+
+However, this displacement is so small for X-rays that the period of the fringes
+needs to be in the micrometer range. These fringes would not be visible
+at the resolution of typical medical imaging detectors. For this reason, an
+analyzer grating G2 with the same period as the interference pattern is
+installed in front of the detector. By scanning G2 along the $x$ direction, the convolution between
+the interference pattern and the transmission profile of the grating itself
+is recorded on each pixel, yielding a \emph{phase stepping curve}.
+Three parameters can be extracted by comparing the curve with the sample
+with a flat field image: the average value, related to the
+conventional absorption, the phase displacement, and the amplitude, which
+depends on the scattering~\cite{Wang2009}.
+
+Finally, a grating interferometer can be set up on spatially incoherent and
+polychromatic sources, provided that a third grating G0 is introduced close
+to the X-ray tube~\cite{Pfeiffer2006,Chen2010a,Momose2009a}. This setup is
+known as a Talbot-Lau interferometer, where the source grating
+creates an array of individually coherent but mutually incoherent sources
+whose interference patterns are superimposed on the detector.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{grating_interferometer.eps}
+    \caption{Parameters of a grating interferometer. The Talbot
+    interferometer does not include a source grating G0.}
+    \label{interferometer}
+\end{figure}
+
+In order to achieve maximum performance, the design parameters of the
+interferometer, such as the pitch of the gratings and their position have to
+be tuned. 
+
+\section{Sensitivity optimization}
+The fundamental parameter for the optimization of the geometry is the
+sensitivity, or smallest detectable refraction angle, given
+by~\cite{Raupach2011}:
+\begin{equation*}
+    \sigma_\alpha = \frac{p_2}{\pi d}
+    \frac{\sqrt{2}}{v}\sigma_{\text{det}},
+\end{equation*}
+where $v$ is the visibility of the fringes, defined in this work as the
+ratio between the magnitudes of the first and zeroth Fourier coefficients of
+the phase stepping curve, and $\sigma_{\text{det}}$ is the
+tipically poissonian noise introduced by the detector.
+The minimization of the smallest detectable refraction angle 
+$\alpha_\text{min}$\cite{Thuering2012} for a Talbot intereferometer is
+achieved in two steps.
+The smallest source sizes $w$ and analyzer grating periods should be chosen,
+according to the properties of the X-ray tube and the available grating
+technology. Then, an optimum period $p_{1}$ of the beam-splitter grating can be
+calculated by minimizing $\sigma_\alpha$.
+
+It can be shown that this is equivalent, for a $\pi$-shifting phase grating,
+to minimizing~\cite{Thuering2014}
+\begin{equation*}
+    \sigma_\alpha \propto \frac{2p_2}{2p_2 - p_1}e^{\pi w
+        \frac{2p_2 - p_1}{p_1 p_2}}.
+\end{equation*}
+
+For the Talbot-Lau design, on the other hand, the smallest $\sigma_\alpha$ is achieved for
+the smallest sum of the pitches of G0 and G2
+This is because the factor $\sigma_\alpha \propto p_2/d$ can be rewritten,
+for a fixed total length $s$:
+\begin{equation*}
+    \frac{p_2}{d} = \frac{p_0 + p_2}{s}.
+\end{equation*}                              
+This ratio is limited by
+the grating fabrication. Since the process is the same for both the source
+and analyzer grating, this leads to the constraint $p_0 = p_2$, and a 
+symmetric setup is the most sensitive.
+                                             
+\section{Optimizing the data analysis}
+The analysis of the phase stepping curves is usually performed with Fast Fourier
+Transform algorithms applied to the phase steps recorded as G2 is displaced
+in front of the interference pattern.
+The first Fourier coefficient is then the absorption, the angle of the first
+coefficient is the phase displacement and the magnitude of the first
+coefficient is the amplitude of the curve.
+This algorithm is mathematically equivalent to an unweighted least squares fit~\cite{FFTEquivalence}.
+
+With a more computationally intensive procedure, each point can be weighted
+with the inverse of the poissonian variance given by the detector.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+    \centering
+    \input{figures/stats_phase_visibility_sd.pgf}
+    \caption{}
+    \label{fig:stats_phase_visibility_sd}
+    \end{subfigure}
+    \begin{subfigure}[b]{\textwidth}
+    \centering
+    \input{figures/stats_visibility_visibility_sd.pgf}
+    \caption{}
+    \label{fig:stats_visibility_visibility_sd}
+    \end{subfigure}
+    \caption[Variance of the parameters of the phase stepping curves.]{
+        Comparison of the standard deviation of the
+        phase~(\ref{fig:stats_phase_visibility_sd}) and
+    amplitude~(\ref{fig:stats_visibility_visibility_sd}) given by the
+    Poisson variance in the detected number of hits for each phase stepping
+    point.}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \input{figures/stats_visibility_visibility_mean.pgf}
+    \caption[Bias of the amplitude estimator for low exposure times.]{Bias
+    of the reconstructed visibility for low detector counts.}
+    \label{fig:stats_visibility_visibility_mean}
+\end{figure}
+These two algorithms are compared through the simulation of sinusoidal phase
+stepping curves with nine steps each and purely poissonian noise $\sigma_i =
+\sqrt{N_i}$, where $N_i$ is the number of counts for point $i$.
+To obtain statistically significant results, \num{100000} curves for each mean
+value and visibility are generated.
+
+The results of the statistical analysis of the simulation in
+figure~\ref{fig:stats_phase_visibility_sd} show the standard deviation of
+the reconstructed phase value as a function of visibility and for three
+values of the average intensity, which is proportional to the exposure
+time. For low visibilities, the poissonian weights are not very different
+for different phase stepping points. Thus the weighting does not improve
+the fit. The weighted estimators have minimum variance
+among all the linear estimators by the Gauss-Markov
+theorem~\cite{eadie2006statistical} and a real difference appears for
+visibilities above \SI{50}{\percent}, which could only be reached in synchrotron
+experiments. This result could also be useful if other sources of noise can
+be determined, such as source instabilities.
+
+On the other hand, the variance of the
+visibility~(figure~\ref{fig:stats_visibility_visibility_sd}) does not depend
+strongly on the visibility itself, but is inversely proportional to the
+exposure time. It is important to not here that, for very
+low counts, which occur for short exposure times or in areas with very high
+absorption, the visibility is
+biased~(figure~\ref{fig:stats_visibility_visibility_mean})~\cite{Chabior2011}.
+This occurs for both the weighted and unweighted fit algorithms.
+
+These results show that the increased computational complexity of the
+weighted least squares fit can not be justified for experiments with lab
+sources, which can not reach a visibility above \SI{50}{\percent} because of
+the low temporal coherence.
+
+\section{Experimental results}
+The results of these theoretical calculations have been used
+in the design of a Talbot-Lau interferometer for a high-energy X-ray tube
+(160 kVp) at the Paul Scherrer Institute (Switzerland).
+
+The design energy of the interferometer is $E_0 = \SI{100}{\kilo\eV}$, and the first
+Talbot distance was used to achieve the maximum spectral
+acceptance~\cite{Weitkamp2005}. The setup is then symmetric with $p_0 = p_1
+= p_2 = \SI{2.8}{\micro\meter}$ and an intergrating distance of
+\SI{15.8}{\centi\meter}. At such high energies, only a 1D arrangement of the
+gratings is possible in order to overcome the limitations in the achievable
+aspect ratios of the gratings. Therefore, the beam is collimated onto a thin
+plane through a slit with a height of \SI{100}{\micro\meter}, and only one
+line of pixels is illuminated. The sample is then scanned across the slit to
+acquire a 2D radiograph.
+
+The maximum theoretical visibility can be calculated according
+to~\cite{Thuering2014}
+\begin{align*}
+    v(\lambda) &= \frac{2}{\pi}\left| \sin^2
+    \Big(\frac{\lambda}{2\lambda_0}\Big) \sin
+    \Big(\pi\frac{\lambda}{2\lambda_0}\Big)\right| \\
+    v &= \int v(\lambda) \rho(\lambda) \de \lambda,
+\end{align*}
+where $\rho(\lambda)$ represents the spectrum of the source. The spectrum
+was simulated with SpekCalc~\cite{Poludniowski2009}, resulting in a maximum
+theoretical visibility of \SI{26}{\percent}. Figure~\ref{fig:visibility}
+shows that the achieved visibility was much lower, about \SI{5}{\percent}.
+
+\begin{figure}[htb]
+    \centering
+    \input{figures/visibility_visibility_100kev.pgf}
+    \caption[Visibility.]{Visibility of the interferometer.}
+    \label{fig:visibility}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Au_Grating_003.png}
+    \caption{}
+    \label{fig:deformations}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Au_Grating_010.png}
+    \caption{}
+    \label{fig:electroplating}
+    \end{subfigure}
+    \caption[SEM images of the gratings.]{Scanning electron microscope
+        images of the gratings. Figure~\ref{fig:deformations} shows the
+        irregularities in the duty cycle. Figure~\ref{fig:electroplating}
+    shows some empty areas in the resist given by an incomplete
+electroplating.}
+\end{figure}
+
+An SEM inspection revealed several problems with the manufacturing of the
+gratings, however, which can be responsible of this reduced performance.
+Several structures in the gratings are deformed and the duty cycle is not
+homogeneous. Other areas show an incomplete electroplating of the lamellae.
+Moreover, the grating mask is 
+split into several regions, which can explain regular drops in visibility at
+the boundaries between these more homogeneous areas.
+
+However, for a proof of principle the low visibility can be at least
+partially balanced by an
+increased exposure time, so that the noise is reduced.
+
+\begin{figure}[hbt]
+    \centering
+    \input{figures/images_S00052.pgf}
+    \caption[Radiograph of a zinc screw.]{Radiograph of a zinc screw.
+        The sample is scanned along \SI{1}{\centi\metre} with \num{100}
+        lines, \num{24} phase steps and \SI{15}{\second} exposure time per
+    step.}
+    \label{fig:screw}
+\end{figure}
+
+Finally, the fundamental steps needed to optimize the design of a Talbot-Lau
+interferometer have been shown. The most relevent result is that the highest
+sensitivity is achieved for a symmetric setup. The maximum theoretical
+visibility is then calculated for a polychromatic spectrum, and an
+evaluation of the performance of the standard data analysis is compared to an
+optimal weighted fit. This shows that for a lab source with a wide spectrum,
+and therefore a maximum theoretical visibility around~\SI{30}{\percent}, the
+standard Fourier transform method is still reliable.
+
+The whole procedure was finally applied to the design of a Talbot-Lau
+interferometer at the Paul Scherrer Institute (Switzerland). The first
+images could be acquired despite several issues with the fabrication of the
+gratings~\cite{Thuering2014b}.
+
+\section*{Acknowledgements}
+We thank Gordan Mikuljan, Peter Modregger and István Mohácsi from the Paul
+Scherrer Institute (PSI), Switzerland, for the
+work on the mechanical design, the scientific advice, and the SEM images
+respectively, Joachim Schulz and Marco Walter from
+Microworks GmbH, Germany, for the competent support on grating design
+issues, Christian Kottler and Vincent Revol from Centre Suisse
+d'Electronique et de Microtechnique (CSEM), Switzerland for the fruitful
+discussions on the design of the system. This work has been partially
+supported by the Competence Centre for Materials Science and Technology
+(CCMX) of the ETH Board, Project Nr. 61 and by the ERC Grant ERC-2012-StG 310005-PhaseX.
+
+\bibliographystyle{spiebib}
+\bibliography{library}
+
+\end{document}
+
+

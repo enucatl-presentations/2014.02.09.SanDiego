@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+
+\bibitem{David2002}
+David, C., N\"{o}hammer, B., Solak, H., and Ziegler, E., ``{Differential x-ray
+  phase contrast imaging using a shearing interferometer},'' ~{\bf 81}(17),
+  3287--3289 (2002).
+
+\bibitem{Momose2003a}
+Momose, A., Kawamoto, S., Koyama, I., Hamaishi, Y., Takai, K., and Suzuki, Y.,
+  ``{Demonstration of X-Ray Talbot Interferometry},'' {\em Japanese Journal of
+  Applied Physics}~{\bf 42},  L866--L868 (2003).
+
+\bibitem{Pfeiffer2006}
+Pfeiffer, F., Weitkamp, T., Bunk, O., and David, C., ``{Phase retrieval and
+  differential phase-contrast imaging with low-brilliance X-ray sources},''
+  {\em Nature Physics}~{\bf 2},  258--261 (Mar. 2006).
+
+\bibitem{Wang2009}
+Wang, Z., Kang, K. K.-J., Huang, Z.-F.~Z., and Chen, Z.-Q.~Z., ``{Quantitative
+  grating-based x-ray dark-field computed tomography},'' {\em Applied Physics
+  Letters}~{\bf 95}(9),  094105 (2009).
+
+\bibitem{Chen2010a}
+Chen, R.~C., Longo, R., Rigon, L., Zanconati, F., {De Pellegrin}, a., Arfelli,
+  F., Dreossi, D., Menk, R.-H., Vallazza, E., Xiao, T.~Q., and Castelli, E.,
+  ``{Measurement of the linear attenuation coefficients of breast tissues by
+  synchrotron radiation computed tomography.},'' {\em Physics in Medicine and
+  Biology}~{\bf 55},  4993--5005 (Sept. 2010).
+
+\bibitem{Momose2009a}
+Momose, A., Yashiro, W., Kuwabara, H., and Kawabata, K., ``{Grating-Based X-ray
+  Phase Imaging Using Multiline X-ray Source},'' {\em Japanese Journal of
+  Applied Physics}~{\bf 48},  076512 (July 2009).
+
+\bibitem{Raupach2011}
+Raupach, R. and Flohr, T.~G., ``{Analytical evaluation of the signal and noise
+  propagation in x-ray differential phase-contrast computed tomography.},''
+  {\em Physics in Medicine and Biology}~{\bf 56},  2219--2244 (Mar. 2011).
+
+\bibitem{Thuering2012}
+Th\"{u}ring, T., Modregger, P., H\"{a}mmerle, S., Weiss, S., N\"{u}esch, J.,
+  and Stampanoni, M., ``{Sensitivity in X-ray grating interferometry on compact
+  systems},'' {\em AIP Conference Proceedings}~{\bf 1466}(1),  293--298 (2012).
+
+\bibitem{Thuering2014}
+Th\"uring, T. and Stampanoni, M., ``Performance and optimization of x-ray
+  grating interferometry,'' {\em Philosophical Transactions of the Royal
+  Society A: Mathematical, Physical and Engineering Sciences}~{\bf 372}(2010)
+  (2014).
+
+\bibitem{FFTEquivalence}
+{Scargle}, J.~D., ``{Studies in astronomical time series analysis. II -
+  Statistical aspects of spectral analysis of unevenly spaced data},'' {\em The
+  Astrophysical Journal}~{\bf 263},  835--853 (Dec. 1982).
+
+\bibitem{eadie2006statistical}
+Eadie, W. and James, F.,  [{\em Statistical Methods in Experimental
+  Physics}{\nolinebreak\hspace{0.1em}]}, World Scientific (2006).
+
+\bibitem{Chabior2011}
+Chabior, M., Donath, T., David, C., Schuster, M., Schroer, C., and Pfeiffer,
+  F., ``{Signal-to-noise ratio in x ray dark-field imaging using a grating
+  interferometer},'' {\em Journal of Applied Physics}~{\bf 110}(5),  053105
+  (2011).
+
+\bibitem{Weitkamp2005}
+Weitkamp, T., Diaz, A., David, C., Pfeiffer, F., Stampanoni, M., Cloetens, P.,
+  and Ziegler, E., ``{X-ray phase imaging with a grating interferometer},''
+  {\em Optics Express}~{\bf 13}(16),  6296--6304 (2005).
+
+\bibitem{Poludniowski2009}
+Poludniowski, G., Landry, G., DeBlois, F., Evans, P., and Verhaegen, F.,
+  ``{SpekCalc: a program to calculate photon spectra from tungsten anode x-ray
+  tubes.},'' {\em Physics in Medicine and Biology}~{\bf 54},  N433--N438 (Oct.
+  2009).
+
+\bibitem{Thuering2014b}
+Th\"{u}ring, T., Abis, M., Wang, Z., David, C., and Stampanoni, M., ``X-ray
+  phase-contrast imaging at 100 kev on a conventional source,'' {\em Scientific
+  Reports}~{\bf 4} (Jun 2014).
+\newblock Article.
+
+\end{thebibliography}

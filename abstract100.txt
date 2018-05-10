@@ -1,0 +1,9 @@
+=================================================================
+Performance and optimization of X-ray grating interferometry
+=================================================================
+
+A teoretical description of the performance of a Talbot and Talbot-Lau
+type interferometers is developed, providing a framework for the
+optimization of the geometry for both a monochromatic and a polychromatic
+source. Analytical formulas for the smallest
+detectable refraction angle and the visibility of the setup are derived.

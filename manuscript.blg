@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: manuscript.aux
+The style file: spiebib.bst
+Database file #1: library.bib
+Warning--string name "apl" is undefined
+--line 3358 of file library.bib
+Warning--empty title in David2002
+You've used 15 entries,
+            1993 wiz_defined-function locations,
+            614 strings with 6827 characters,
+and the built_in function-call counts, 4918 in all, are:
+= -- 466
+> -- 236
+< -- 0
++ -- 84
+- -- 69
+* -- 438
+:= -- 663
+add.period$ -- 16
+call.type$ -- 15
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 225
+empty$ -- 392
+format.name$ -- 69
+if$ -- 1167
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 16
+newline$ -- 49
+num.names$ -- 15
+pop$ -- 24
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 213
+stack$ -- 0
+substring$ -- 368
+swap$ -- 149
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 44
+width$ -- 17
+write$ -- 136
+(There were 2 warnings)
